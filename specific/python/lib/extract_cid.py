@@ -5,9 +5,9 @@ import json
 if __name__ == "__main__":
     files = [
         "tokkyo_chikujo_text.json",
-        "shinan_chikujo_text.json",
+        "jitsu_chikujo_text.json",
         "isho_chikujo_text.json",
-        "shohyo_chikujo_text.json"
+        "shouhyou_chikujo_text.json"
     ]
 
     base_path = os.path.abspath(os.path.join(os.path.dirname(__file__),"..","extracted_text_from_pdf"))
