@@ -10,4 +10,4 @@ if __name__ == "__main__":
     end_page   = 176
     out_file_name = "fuseikyousou_chikuzyo_text.json"
 
-    extract_text(pdf_file_name, "\n", start_page, end_page, False, out_file_name)
+    extract_text(pdf_file_name, "\n\n", start_page, end_page, False, out_file_name)
