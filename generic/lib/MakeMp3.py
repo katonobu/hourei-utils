@@ -1,4 +1,5 @@
 import os
+import tempfile
 try:
     import pyttsx3
 except ModuleNotFoundError as e:
@@ -42,8 +43,8 @@ class MakeMp3():
         if self.is_skip == False:
             mp3_file_path = os.path.join(self.dir_path, file_name)
             if self.dry_run == False:
-                if False:
-                    wav_file = mp3_file_path.replace(".mp3",".wav")
+                with tempfile.TemporaryDirectory() as td:
+                    wav_file = os.path.join(td, "tmp.wav")
                     self.engine.save_to_file('\n'.join(texts), wav_file)
                     print(f'  Generating {title}')
                     self.engine.runAndWait()
@@ -56,13 +57,9 @@ class MakeMp3():
                     audio.tags.add(TIT2(encoding=3, text=title))  # 曲名
                     audio.tags.add(TPE1(encoding=3, text="法令読み上げ"))  # アーティスト
                     audio.tags.add(TALB(encoding=3, text=os.path.basename(self.dir_path)))  # アルバム
-                    audio.tags.add(TRCK(encoding=3, text={self.track_count}))            # トラック番号
+                    audio.tags.add(TRCK(encoding=3, text=f"{self.track_count}"))            # トラック番号
                     audio.save()                
                     self.track_count += 1
-                else:
-                    self.engine.save_to_file('\n'.join(texts), mp3_file_path)
-                    print(f'  Generating {title}')
-                    self.engine.runAndWait()
             else:
                 with open(mp3_file_path.replace(".mp3",".txt"), "w", encoding='utf-8') as f:
                     f.write('\n'.join(texts))
