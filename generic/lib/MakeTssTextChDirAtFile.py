@@ -31,7 +31,9 @@ class MakeTssTextChDirAtFile(HoureiXml):
             s = s.replace(key, table[key])
         """ delete zenkaku_brackets """
         l = ['（[^（|^）]*）', '【[^【|^】]*】', '＜[^＜|^＞]*＞', '［[^［|^］]*］',
-            '「[^「|^」]*」', '｛[^｛|^｝]*｝', '〔[^〔|^〕]*〕', '〈[^〈|^〉]*〉']
+#            地の「」は第二条定義で出てくるので消さずに残す。             
+#            '「[^「|^」]*」', '｛[^｛|^｝]*｝', '〔[^〔|^〕]*〕', '〈[^〈|^〉]*〉']
+                             '｛[^｛|^｝]*｝', '〔[^〔|^〕]*〕', '〈[^〈|^〉]*〉']
         for l_ in l:
             s = re.sub(l_, "", s)
         """ recursive processing """
@@ -158,8 +160,8 @@ class MakeTssTextChDirAtFile(HoureiXml):
         return user_data
 
 if __name__ == "__main__":
-    hourei_id = "411AC0000000127" # 国旗及び国歌に関する法律
-#    hourei_id = "334AC0000000121" # 特許法
+#    hourei_id = "411AC0000000127" # 国旗及び国歌に関する法律
+    hourei_id = "334AC0000000121" # 特許法
 
     # Subsectionに対応した? 電気通信事業法
     # Divisionに対応できていない。 民法
@@ -189,3 +191,5 @@ if __name__ == "__main__":
         except Exception as e:
             print("Catch exception....")
             raise e
+
+    print(hourei_xml.delete_brackets("ここ(の「か(っ)こ」)は削除されるべきだが、「ここ(但しここは除く)」は残るのが期待される動作である。"))
