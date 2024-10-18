@@ -349,12 +349,12 @@ if __name__ == "__main__":
         prev_next_strs = []
         if 0 < idx:
             prev_json_file_path = os.path.join(out_file_base, f"{idx-1:03d}_{article_mds[idx-1]['title']}.md")
-            prev_file_path_rel = Path(prev_json_file_path).relative_to(Path.cwd())
+            prev_file_path_rel = str(Path(prev_json_file_path).relative_to(Path.cwd())).replace(os.path.sep, "/")
             prev_str = f"[prev](/{prev_file_path_rel})"
             prev_next_strs.append(prev_str)
         if idx < len(articles) - 1:
             next_json_file_path = os.path.join(out_file_base, f"{idx+1:03d}_{article_mds[idx+1]['title']}.md")
-            next_file_path_rel = Path(next_json_file_path).relative_to(Path.cwd())
+            next_file_path_rel = str(Path(next_json_file_path).relative_to(Path.cwd())).replace(os.path.sep, "/")
             next_str = f"[next](/{next_file_path_rel})"
             prev_next_strs.append(next_str)
         
