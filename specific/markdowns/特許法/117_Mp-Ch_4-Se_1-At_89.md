@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\116_Mp-Ch_4-Se_1-At_88.md)
-[next](/specific\markdowns\特許法\118_Mp-Ch_4-Se_1-At_90.md)
+[prev](/specific/markdowns/特許法/116_Mp-Ch_4-Se_1-At_88.md)
+[next](/specific/markdowns/特許法/118_Mp-Ch_4-Se_1-At_90.md)
 ## 第八九条 (裁定の失効)
 通常実施権の設定を受けようとする者が第八十三条第二項［通常実施権設定の裁定］の裁定で定める支払の時期までに対価（対価を定期に又は分割して支払うべきときは、その最初に支払うべき分）の支払又は供託をしないときは、通常実施権を設定すべき旨の裁定は、その効力を失う。
 
@@ -12,5 +12,5 @@
 ### 字句解説
 ＜定期に又は分割して＞前者は毎年毎年（あるいは毎月毎月等）定期的に債権債務関係が発生していくものであり、後者の債権債務関係は一度に発生し、その債務の履行期が毎年毎年（あるいは毎月毎月等）到来するものである。
 
-[prev](/specific\markdowns\特許法\116_Mp-Ch_4-Se_1-At_88.md)
-[next](/specific\markdowns\特許法\118_Mp-Ch_4-Se_1-At_90.md)
+[prev](/specific/markdowns/特許法/116_Mp-Ch_4-Se_1-At_88.md)
+[next](/specific/markdowns/特許法/118_Mp-Ch_4-Se_1-At_90.md)

@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\103_Mp-Ch_4-Se_1-At_77.md)
-[next](/specific\markdowns\特許法\105_Mp-Ch_4-Se_1-At_79.md)
+[prev](/specific/markdowns/特許法/103_Mp-Ch_4-Se_1-At_77.md)
+[next](/specific/markdowns/特許法/105_Mp-Ch_4-Se_1-At_79.md)
 ## 第七八条 (通常実施権)
 特許権者は、その特許権について他人に通常実施権を許諾することができる。
 ２ 通常実施権者は、この法律の規定により又は設定行為で定めた範囲内において、業としてその特許発明の実施をする権利を有する。
@@ -12,5 +12,5 @@
 二項は、通常実施権の権利の内容を規定したものである。ここにいう通常実施権は、一項に規定する許諾による通常実施権のみならず、その他の通常実施権（例えば三五条一項の職務発明に係る通常実施権、次条の先使用による通常実施権、裁定による通常実施権等）の全てを含むものである。「この法律の規定により又は設定行為で」とした理由もここにある。
 これらの通常実施権も全て債権的な性格を有するものであることは言うまでもない。
 
-[prev](/specific\markdowns\特許法\103_Mp-Ch_4-Se_1-At_77.md)
-[next](/specific\markdowns\特許法\105_Mp-Ch_4-Se_1-At_79.md)
+[prev](/specific/markdowns/特許法/103_Mp-Ch_4-Se_1-At_77.md)
+[next](/specific/markdowns/特許法/105_Mp-Ch_4-Se_1-At_79.md)

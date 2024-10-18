@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\124_Mp-Ch_4-Se_1-At_95.md)
-[next](/specific\markdowns\特許法\126_Mp-Ch_4-Se_1-At_97.md)
+[prev](/specific/markdowns/特許法/124_Mp-Ch_4-Se_1-At_95.md)
+[next](/specific/markdowns/特許法/126_Mp-Ch_4-Se_1-At_97.md)
 ## 第九六条 (同前)
 特許権、専用実施権又は通常実施権を目的とする質権は、特許権、専用実施権若しくは通常実施権の対価又は特許発明の実施に対しその特許権者若しくは専用実施権者が受けるべき金銭その他の物に対しても、行うことができる。ただし、その払渡又は引渡前に差押をしなければならない。
 
@@ -15,5 +15,5 @@
 １ ＜特許発明の実施に対し受けるべき金銭＞特許権者又は専用実施権者が受ける実施料を含むことは言うまでもなく、損害賠償請求権の上にも質権の効力が認められる。
 ２ ＜金銭その他の物＞債務者が取得した金銭その他の物自体の上に質権が行われるのではなく、金銭その他の物の請求権の上に質権が行われるのである。
 
-[prev](/specific\markdowns\特許法\124_Mp-Ch_4-Se_1-At_95.md)
-[next](/specific\markdowns\特許法\126_Mp-Ch_4-Se_1-At_97.md)
+[prev](/specific/markdowns/特許法/124_Mp-Ch_4-Se_1-At_95.md)
+[next](/specific/markdowns/特許法/126_Mp-Ch_4-Se_1-At_97.md)

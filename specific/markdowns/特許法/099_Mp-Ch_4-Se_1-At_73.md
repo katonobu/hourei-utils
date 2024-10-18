@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\098_Mp-Ch_4-Se_1-At_72.md)
-[next](/specific\markdowns\特許法\100_Mp-Ch_4-Se_1-At_74.md)
+[prev](/specific/markdowns/特許法/098_Mp-Ch_4-Se_1-At_72.md)
+[next](/specific/markdowns/特許法/100_Mp-Ch_4-Se_1-At_74.md)
 ## 第七三条 (共有に係る特許権)
 特許権が共有に係るときは、各共有者は、他の共有者の同意を得なければ、その持分を譲渡し、又はその持分を目的として質権を設定することができない。
 ２ 特許権が共有に係るときは、各共有者は、契約で別段の定をした場合を除き、他の共有者の同意を得ないでその特許発明の実施をすることができる。
@@ -18,5 +18,5 @@
 １ ＜譲渡＞用語の意味からして、相続その他の一般承継は含まず、したがって、相続その他の一般承継については他の共有者の同意を要しない。
 ２ ＜専用実施権＞七七条参照３ ＜通常実施権＞七八条参照
 
-[prev](/specific\markdowns\特許法\098_Mp-Ch_4-Se_1-At_72.md)
-[next](/specific\markdowns\特許法\100_Mp-Ch_4-Se_1-At_74.md)
+[prev](/specific/markdowns/特許法/098_Mp-Ch_4-Se_1-At_72.md)
+[next](/specific/markdowns/特許法/100_Mp-Ch_4-Se_1-At_74.md)

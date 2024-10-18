@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\082_Mp-Ch_3_2-At_65.md)
-[next](/specific\markdowns\特許法\084_Mp-Ch_4-Se_1-At_67.md)
+[prev](/specific/markdowns/特許法/082_Mp-Ch_3_2-At_65.md)
+[next](/specific/markdowns/特許法/084_Mp-Ch_4-Se_1-At_67.md)
 ## 第六六条 (特許権の設定の登録)
 特許権は、設定の登録により発生する。
 ２ 第百七条第一項［特許料］の規定による第一年から第三年までの各年分の特許料の納付又はその納付の免除若しくは猶予があつたときは、特許権の設定の登録をする。
@@ -19,5 +19,5 @@
 ### 字句解説
 １ ＜特許料＞一〇七条一項参照２ ＜特許料の免除又は猶予＞一〇九条及び一〇九条の二参照３ ＜特許公報＞一九三条参照
 
-[prev](/specific\markdowns\特許法\082_Mp-Ch_3_2-At_65.md)
-[next](/specific\markdowns\特許法\084_Mp-Ch_4-Se_1-At_67.md)
+[prev](/specific/markdowns/特許法/082_Mp-Ch_3_2-At_65.md)
+[next](/specific/markdowns/特許法/084_Mp-Ch_4-Se_1-At_67.md)

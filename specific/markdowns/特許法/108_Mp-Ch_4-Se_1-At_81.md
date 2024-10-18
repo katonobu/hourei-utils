@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\107_Mp-Ch_4-Se_1-At_80.md)
-[next](/specific\markdowns\特許法\109_Mp-Ch_4-Se_1-At_82.md)
+[prev](/specific/markdowns/特許法/107_Mp-Ch_4-Se_1-At_80.md)
+[next](/specific/markdowns/特許法/109_Mp-Ch_4-Se_1-At_82.md)
 ## 第八一条 (意匠権の存続期間満了後の通常実施権)
 特許出願の日前又はこれと同日の意匠登録出願に係る意匠権がその特許出願に係る特許権と抵触する場合において、その意匠権の存続期間が満了したときは、その原意匠権者は、原意匠権の範囲内において、当該特許権又はその意匠権の存続期間の満了の際現に存する専用実施権について通常実施権を有する。
 
@@ -14,5 +14,5 @@
 １ ＜意匠権の存続期間＞旧法においては登録の日から一〇年であったが、現行法においては登録の日から一五年に改められた。また、平成一八年の一部改正により二〇年に、さらに令和元年の一部改正により出願の日から二五年に改められた（意二一条参照）。
 ２ ＜原意匠権の範囲＞消滅した意匠権の意匠を実施するに必要な限度においてということになる。
 
-[prev](/specific\markdowns\特許法\107_Mp-Ch_4-Se_1-At_80.md)
-[next](/specific\markdowns\特許法\109_Mp-Ch_4-Se_1-At_82.md)
+[prev](/specific/markdowns/特許法/107_Mp-Ch_4-Se_1-At_80.md)
+[next](/specific/markdowns/特許法/109_Mp-Ch_4-Se_1-At_82.md)

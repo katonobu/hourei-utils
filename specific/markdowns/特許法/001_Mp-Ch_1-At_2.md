@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\000_Mp-Ch_1-At_1.md)
-[next](/specific\markdowns\特許法\002_Mp-Ch_1-At_3.md)
+[prev](/specific/markdowns/特許法/000_Mp-Ch_1-At_1.md)
+[next](/specific/markdowns/特許法/002_Mp-Ch_1-At_3.md)
 ## 第二条 (定義)
 この法律で「発明」とは、自然法則を利用した技術的思想の創作のうち高度のものをいう。
 ２ この法律で「特許発明」とは、特許を受けている発明をいう。
@@ -27,5 +27,5 @@
 ７ ＜電子計算機による処理の用に供する情報＞電子化などの手法により直ちにコンピュータによる処理に用いることが可能な状態にされた情報を意味する。本に書かれた情報や人間の知識としての情報など、そのままではコンピュータにより処理することのできない情報は含まれない。
 ８ ＜プログラムに準ずるもの＞コンピュータに対する直接の指令ではないためプログラムとは呼べないが、コンピュータの処理を規定するものという点でプログラムに類似する性質を有するものを意味する。
 
-[prev](/specific\markdowns\特許法\000_Mp-Ch_1-At_1.md)
-[next](/specific\markdowns\特許法\002_Mp-Ch_1-At_3.md)
+[prev](/specific/markdowns/特許法/000_Mp-Ch_1-At_1.md)
+[next](/specific/markdowns/特許法/002_Mp-Ch_1-At_3.md)

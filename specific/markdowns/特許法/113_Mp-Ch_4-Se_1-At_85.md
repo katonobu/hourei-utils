@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\112_Mp-Ch_4-Se_1-At_84_2.md)
-[next](/specific\markdowns\特許法\114_Mp-Ch_4-Se_1-At_86.md)
+[prev](/specific/markdowns/特許法/112_Mp-Ch_4-Se_1-At_84_2.md)
+[next](/specific/markdowns/特許法/114_Mp-Ch_4-Se_1-At_86.md)
 ## 第八五条 (審議会の意見の聴取等)
 特許庁長官は、第八十三条第二項［通常実施権設定の裁定］の裁定をしようとするときは、審議会等（国家行政組織法（昭和二十三年法律第百二十号）第八条に規定する機関をいう。）で政令で定めるものの意見を聴かなければならない。（改正、昭四一法律九八、昭五八法律七八、平一一法律一六〇）意２ 特許庁長官は、その特許発明の実施が適当にされていないことについて正当な理由があるときは、通常実施権を設定すべき旨の裁定をすることができない。
 
@@ -13,5 +13,5 @@
 ### 字句解説
 ＜審議会等で政令で定めるもの＞工業所有権審議会（特施令七条参照）
 
-[prev](/specific\markdowns\特許法\112_Mp-Ch_4-Se_1-At_84_2.md)
-[next](/specific\markdowns\特許法\114_Mp-Ch_4-Se_1-At_86.md)
+[prev](/specific/markdowns/特許法/112_Mp-Ch_4-Se_1-At_84_2.md)
+[next](/specific/markdowns/特許法/114_Mp-Ch_4-Se_1-At_86.md)

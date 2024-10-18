@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\005_Mp-Ch_1-At_6.md)
-[next](/specific\markdowns\特許法\007_Mp-Ch_1-At_8.md)
+[prev](/specific/markdowns/特許法/005_Mp-Ch_1-At_6.md)
+[next](/specific/markdowns/特許法/007_Mp-Ch_1-At_8.md)
 ## 第七条 (未成年者、成年被後見人等の手続をする能力)
 未成年者及び成年被後見人は、法定代理人によらなければ、手続をすることができない。ただし、未成年者が独立して法律行為をすることができるときは、この限りでない。
 ２ 被保佐人が手続をするには、保佐人の同意を得なければならない。
@@ -67,5 +67,5 @@
 の法律行為後見開始の審判不 要本人の意思を尊重し、かつ、その心身の状態及び生活の状況に配慮す
 る義務
 
-[prev](/specific\markdowns\特許法\005_Mp-Ch_1-At_6.md)
-[next](/specific\markdowns\特許法\007_Mp-Ch_1-At_8.md)
+[prev](/specific/markdowns/特許法/005_Mp-Ch_1-At_6.md)
+[next](/specific/markdowns/特許法/007_Mp-Ch_1-At_8.md)

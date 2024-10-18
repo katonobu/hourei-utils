@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\102_Mp-Ch_4-Se_1-At_76.md)
-[next](/specific\markdowns\特許法\104_Mp-Ch_4-Se_1-At_78.md)
+[prev](/specific/markdowns/特許法/102_Mp-Ch_4-Se_1-At_76.md)
+[next](/specific/markdowns/特許法/104_Mp-Ch_4-Se_1-At_78.md)
 ## 第七七条 (専用実施権)
 特許権者は、その特許権について専用実施権を設定することができる。
 ２ 専用実施権者は、設定行為で定めた範囲内において、業としてその特許発明の実施をする権利を専有する。
@@ -20,5 +20,5 @@
 ２ ＜業として＞六八条参照３ ＜事業とともにする場合＞この場合に特許権者の承諾なくして移転することができるとしたのは、事業を移転しても専用実施権を移転し得ないならば、その事業設備は稼働し得なくなる場合が少なくなく、ひいては国家経済上からの損失となるからである。
 ４ ＜質権＞九五条参照
 
-[prev](/specific\markdowns\特許法\102_Mp-Ch_4-Se_1-At_76.md)
-[next](/specific\markdowns\特許法\104_Mp-Ch_4-Se_1-At_78.md)
+[prev](/specific/markdowns/特許法/102_Mp-Ch_4-Se_1-At_76.md)
+[next](/specific/markdowns/特許法/104_Mp-Ch_4-Se_1-At_78.md)

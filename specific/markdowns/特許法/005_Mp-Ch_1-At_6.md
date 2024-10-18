@@ -1,5 +1,5 @@
-[prev](/specific\markdowns\特許法\004_Mp-Ch_1-At_5.md)
-[next](/specific\markdowns\特許法\006_Mp-Ch_1-At_7.md)
+[prev](/specific/markdowns/特許法/004_Mp-Ch_1-At_5.md)
+[next](/specific/markdowns/特許法/006_Mp-Ch_1-At_7.md)
 ## 第六条 (法人でない社団等の手続をする能力)
 法人でない社団又は財団であつて、代表者又は管理人の定めがあるものは、その名において次に掲げる手続をすることができる。
 一 出願審査の請求をすること。（本号追加、昭四五法律九一）
@@ -24,5 +24,5 @@
 ２ ＜財団＞個人の帰属を離れて、一定の目的のために管理される財産の集合をいう。例えば社会事業のために募集された寄附財産のごとくである。
 ３ ＜代表者又は管理人＞その団体の活動機関のことで、その機関の名称が必ずしも代表者又は管理人というものであることを要しない。「定めがある」というのは団体の定款等で定めていることをいう。
 
-[prev](/specific\markdowns\特許法\004_Mp-Ch_1-At_5.md)
-[next](/specific\markdowns\特許法\006_Mp-Ch_1-At_7.md)
+[prev](/specific/markdowns/特許法/004_Mp-Ch_1-At_5.md)
+[next](/specific/markdowns/特許法/006_Mp-Ch_1-At_7.md)
