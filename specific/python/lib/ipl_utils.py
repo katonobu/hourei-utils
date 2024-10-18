@@ -6,7 +6,7 @@ import cid_trans
 
 def is_skipped_line(line):
     # ページ番号表記
-    if re.match(r"^\d+ 特", line) or re.match(r"^\d+ 特 許", line) or line=="許" or line=="法":
+    if re.match(r"^\d+ 特$", line) or re.match(r"^\d+ 特 許$", line) or line=="許" or line=="法":
         return True
     if re.match(r"^特 許 法 \d+", line):
         return True
@@ -338,7 +338,8 @@ if __name__ == "__main__":
 
 #    pages = in_obj["pages"]
     pages = in_obj
-    articles = to_structured_data(conversion_text(pages))
+    conversioned_obj = conversion_text(pages)
+    articles = to_structured_data(conversioned_obj)
     
     article_mds = [make_article_md(article) for article in articles]
 
