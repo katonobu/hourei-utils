@@ -267,9 +267,11 @@ def texts_to_sentences(list_to_append, texts):
         line += text
         if re.search("。[ 　]*$", text) or re.search("。（.*?）$", text):
             list_to_append.append(line)
+            list_to_append.append("")
             line = ""
     if 0 < len(line):
         list_to_append.append(line)
+        list_to_append.append("")
 
 
 def make_article_md(article):
