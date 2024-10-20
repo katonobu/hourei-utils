@@ -19,6 +19,7 @@ class MakeMp3():
         self.output_id_filter_str = output_id_filter_str
         self.del_id_str = del_id_str
         self.dir_path = None
+        self.dir_count = 1
         self.track_count = 1
         self.dry_run = pyttsx3 is None or dry_run
         if self.dry_run == False:
@@ -33,13 +34,14 @@ class MakeMp3():
         if 0 == len(self.output_id_filter_str) or id_str.replace(self.del_id_str,"") in self.output_id_filter_str:
             self.is_skip = False
             print(f'Making dir for {id_str}')
-            self.dir_path = os.path.join(self.base_dir, '_'.join(dirs))
+            self.dir_path = os.path.join(self.base_dir, '_'.join([f'{self.dir_count:02d}'] + dirs))
             os.makedirs(self.dir_path, exist_ok=True)
+            self.dir_count += 1
         else:
             self.is_skip = True
             print(f'Skip making dir for {id_str}')
 
-    def mp3_tts(self, file_name, texts, title):
+    def mp3_tts(self, file_name, texts, title, law_name):
         if self.is_skip == False:
             mp3_file_path = os.path.join(self.dir_path, file_name)
             if self.dry_run == False:
@@ -55,7 +57,7 @@ class MakeMp3():
                     # タグを設定
                     audio = MP3(mp3_file_path, ID3=ID3)
                     audio.tags.add(TIT2(encoding=3, text=title))  # 曲名
-                    audio.tags.add(TPE1(encoding=3, text="法令読み上げ"))  # アーティスト
+                    audio.tags.add(TPE1(encoding=3, text="law_name"))  # アーティスト
                     audio.tags.add(TALB(encoding=3, text=os.path.basename(self.dir_path)))  # アルバム
                     audio.tags.add(TRCK(encoding=3, text=f"{self.track_count}"))            # トラック番号
                     audio.save()                

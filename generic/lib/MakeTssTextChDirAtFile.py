@@ -56,6 +56,11 @@ class MakeTssTextChDirAtFile(HoureiXml):
                 text = text.replace(replace_str, self.user_data['replace_strs'][replace_str])
         return text
 
+    def user_law_title_handler(self, el, user_data):
+        title_str = self.get_inline_text(el).strip()
+        self.user_data.update({"LawTitle":title_str})
+        return user_data
+
     def user_main_provision_handler(self, el, user_data):
         hourei_base_dir = os.path.join(os.path.dirname(__file__), "..", "hourei_data")
         if self.dry_run:
@@ -127,7 +132,7 @@ class MakeTssTextChDirAtFile(HoureiXml):
             "file":str(file_name),
             "title":str(sound_title),
         })
-        self.mk_mp3.mp3_tts(file_name, texts.split('\n'), sound_title)
+        self.mk_mp3.mp3_tts(file_name, texts.split('\n'), sound_title, self.user_data["LawTitle"])
 
     def user_paragraph_handler(self, el, user_data):
         if "parent_article_str" not in user_data:
