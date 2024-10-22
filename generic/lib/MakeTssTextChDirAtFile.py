@@ -50,7 +50,7 @@ class MakeTssTextChDirAtFile(HoureiXml):
         text = self.delete_brackets(text)
         if 'replace_res' in self.user_data:
             for replace_re in self.user_data['replace_res']:
-                text = re.sub(replace_re, self.user_data['replace_res'][replace_str], text)
+                text = re.sub(replace_re, self.user_data['replace_res'][replace_re], text)
         if 'replace_strs' in self.user_data:
             for replace_str in self.user_data['replace_strs']:
                 text = text.replace(replace_str, self.user_data['replace_strs'][replace_str])
@@ -62,7 +62,7 @@ class MakeTssTextChDirAtFile(HoureiXml):
         return user_data
 
     def user_main_provision_handler(self, el, user_data):
-        hourei_base_dir = os.path.join(os.path.dirname(__file__), "..", "hourei_data")
+        hourei_base_dir = self.xml_base_path
         if self.dry_run:
             mp3_out_dir = os.path.join(hourei_base_dir, self.hourei_id, "mp3_txt")
         else:
