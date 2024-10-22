@@ -332,7 +332,9 @@ if __name__ == "__main__":
     base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     in_file_base = os.path.join(base_path, "extracted_text_from_pdf")
     in_file_path = os.path.join(in_file_base, in_file_name)
-    out_file_base = os.path.abspath(os.path.join(base_path, "..","markdowns","特許法"))
+    hourei_base_dir = os.path.join(os.path.dirname(__file__), "..", "hourei_data")
+
+    out_file_base = os.path.abspath(os.path.join(base_path, "hourei_data", "334AC0000000121", "chikujo_md"))
     os.makedirs(out_file_base, exist_ok=True)
 
     with open(in_file_path, encoding='utf-8') as f:
