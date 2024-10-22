@@ -57,7 +57,7 @@ class MakeMp3():
                     # タグを設定
                     audio = MP3(mp3_file_path, ID3=ID3)
                     audio.tags.add(TIT2(encoding=3, text=title))  # 曲名
-                    audio.tags.add(TPE1(encoding=3, text="law_name"))  # アーティスト
+                    audio.tags.add(TPE1(encoding=3, text=law_name))  # アーティスト
                     audio.tags.add(TALB(encoding=3, text=os.path.basename(self.dir_path)))  # アルバム
                     audio.tags.add(TRCK(encoding=3, text=f"{self.track_count}"))            # トラック番号
                     audio.save()                
