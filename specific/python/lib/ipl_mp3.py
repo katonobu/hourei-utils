@@ -43,14 +43,15 @@ class ChikujoTtsText(MakeTssTextChDirAtFile):
 
     def convert_line(self, text):
         text = self.delete_brackets(text)
-        for replace_str in ChikujoTtsText._purpose_replace_strs:
-            text = text.replace(replace_str, ChikujoTtsText._purpose_replace_strs[replace_str])
         if 'replace_res' in self.user_data:
             for replace_re in self.user_data['replace_res']:
                 text = re.sub(replace_re, self.user_data['replace_res'][replace_re], text)
         if 'replace_strs' in self.user_data:
             for replace_str in self.user_data['replace_strs']:
                 text = text.replace(replace_str, self.user_data['replace_strs'][replace_str])
+        # 先に読みがな変換してから数値変換する。
+        for replace_str in ChikujoTtsText._purpose_replace_strs:
+            text = text.replace(replace_str, ChikujoTtsText._purpose_replace_strs[replace_str])
         return text
 
     def get_purpose(self, id_str):
@@ -118,7 +119,7 @@ if __name__ == "__main__":
             'replace_res':replace_res,
             'structured_chikujo_obj':structured_obj
         }, 
-        "2",#"1",
+        "1",#"1",
         "Mp-Ch_",
         dry_run
     )
