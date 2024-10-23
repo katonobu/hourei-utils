@@ -19,7 +19,6 @@ class MakeMp3():
         self.output_id_filter_str = output_id_filter_str
         self.del_id_str = del_id_str
         self.dir_path = None
-        self.dir_count = 1
         self.track_count = 1
         self.dry_run = pyttsx3 is None or dry_run
         if self.dry_run == False:
@@ -34,9 +33,9 @@ class MakeMp3():
         if 0 == len(self.output_id_filter_str) or id_str.replace(self.del_id_str,"") in self.output_id_filter_str:
             self.is_skip = False
             print(f'Making dir for {id_str}')
-            self.dir_path = os.path.join(self.base_dir, '_'.join([f'{self.dir_count:02d}'] + dirs))
+            chapter_number = int(id_str.split("-")[1].split("_")[-1], 10)
+            self.dir_path = os.path.join(self.base_dir, '_'.join([f'{chapter_number:02d}'] + dirs))
             os.makedirs(self.dir_path, exist_ok=True)
-            self.dir_count += 1
         else:
             self.is_skip = True
             print(f'Skip making dir for {id_str}')
