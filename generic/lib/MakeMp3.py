@@ -33,19 +33,24 @@ class MakeMp3():
         if 0 == len(self.output_id_filter_str) or id_str.replace(self.del_id_str,"") in self.output_id_filter_str:
             self.is_skip = False
             print(f'Making dir for {id_str}')
-            chapter_number = int(id_str.split("-")[1].split("_")[-1], 10)
-            self.dir_path = os.path.join(self.base_dir, '_'.join([f'{chapter_number:02d}'] + dirs))
+            depth_strs = []
+            for depth in id_str.split("-")[1:]: # [1:]はMpを抜くため
+                depth_strs.append('_'.join([f'{int(item, 10):02d}' for item in depth.split("_")[1:]])) # [:1]はChとかを抜くため
+            
+            chapter_number_str = '_'.join(['__'.join(depth_strs)]+ dirs)
+            self.dir_path = os.path.join(self.base_dir, chapter_number_str)
             os.makedirs(self.dir_path, exist_ok=True)
         else:
             self.is_skip = True
             print(f'Skip making dir for {id_str}')
 
-    def mp3_tts(self, file_name, texts, title, law_name):
+    def mp3_tts(self, file_name, texts, title, law_name, rate=200):
         if self.is_skip == False:
             mp3_file_path = os.path.join(self.dir_path, file_name)
             if self.dry_run == False:
                 with tempfile.TemporaryDirectory() as td:
                     wav_file = os.path.join(td, "tmp.wav")
+                    self.engine.setProperty('rate', rate)
                     self.engine.save_to_file('\n'.join(texts), wav_file)
                     print(f'  Generating {title}')
                     self.engine.runAndWait()
@@ -56,6 +61,13 @@ class MakeMp3():
                     # タグを設定
                     audio = MP3(mp3_file_path, ID3=ID3)
                     audio.tags.add(TIT2(encoding=3, text=title))  # 曲名
+                    if rate != 200:
+                        baisoku = rate/200
+                        audio.tags.add(TIT2(encoding=3, text=f"{title} {baisoku:1.1f}倍速"))  # 曲名
+                    else:
+                        audio.tags.add(TIT2(encoding=3, text=title))  # 曲名
+
+
                     audio.tags.add(TPE1(encoding=3, text=law_name))  # アーティスト
                     audio.tags.add(TALB(encoding=3, text=os.path.basename(self.dir_path)))  # アルバム
                     audio.tags.add(TRCK(encoding=3, text=f"{self.track_count}"))            # トラック番号

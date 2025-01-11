@@ -17,6 +17,9 @@ if __name__ == "__main__":
         "325AC0000000131", # 電波法
         "359AC0000000086", # 電気通信事業者法
 
+        "339AC0000000170", # 電気事業法
+        "345AC1000000096", # 電気工事業の業務の適正化に関する法律
+
         "503AC0000000035", # デジタル社会形成基本法
         "426AC1000000104", # サイバーセキュリティ基本法
         "345AC0000000090", # 情報処理の促進に関する法律
@@ -28,10 +31,14 @@ if __name__ == "__main__":
     ]
 
     hourei_ids = [
-        "334AC0000000121", # 特許法
+        "325AC0000000131", # 電波法
+#        "334AC0000000121", # 特許法
     ]
 
+    speed_percent = 100
+    speed_percent = 140 # 1.4倍速
     dry_run = False
+#    dry_run = True
     hourei_base_dir = os.path.join(os.path.dirname(__file__), "..", "hourei_data")
 
     hourei_xml = MakeTssTextChDirAtFile(
@@ -42,7 +49,8 @@ if __name__ == "__main__":
         }, 
         "",#"1",
         "Mp-Ch_",
-        dry_run
+        dry_run,
+        speed_percent
     )
 
     for hourei_id in hourei_ids:

@@ -1,14 +1,16 @@
 import os
 import re
+import json
 from HoureiXml import HoureiXml
 from MakeMp3 import MakeMp3
 
 class MakeTssTextChDirAtFile(HoureiXml):
-    def __init__(self, xml_base_path, user_data = {}, output_id_filter_str = "", del_id_str = "Mp-Ch_", dry_run = False):
+    def __init__(self, xml_base_path, user_data = {}, output_id_filter_str = "", del_id_str = "Mp-Ch_", dry_run = False, spped_percent = 100):
         super().__init__(xml_base_path, user_data)
         self.output_id_filter_str = output_id_filter_str
         self.del_id_str = del_id_str
         self.dry_run = dry_run
+        self.speed_percent = spped_percent
 
     # 【Python3】括弧と括弧内文字列削除
     # https://qiita.com/mynkit/items/d6714b659a9f595bcac8
@@ -66,7 +68,18 @@ class MakeTssTextChDirAtFile(HoureiXml):
         if self.dry_run:
             mp3_out_dir = os.path.join(hourei_base_dir, self.hourei_id, "mp3_txt")
         else:
-            mp3_out_dir = os.path.join(hourei_base_dir, self.hourei_id, "mp3")
+            dir_name_str = "mp3"
+            if self.speed_percent != 100:
+                dir_name_str = f"mp3_x{self.speed_percent/100:1.1f}".replace(".","_")
+            mp3_out_dir = os.path.join(hourei_base_dir, self.hourei_id, dir_name_str)
+
+        name_replace_obj = {}
+        name_replace_file_path = os.path.join(hourei_base_dir, self.hourei_id, "at_name_replace.json")
+        if os.path.isfile(name_replace_file_path):
+            with open(name_replace_file_path, encoding='utf-8') as f:
+                name_replace_obj = json.load(f)
+        self.user_data['name_replace_obj'] = name_replace_obj
+
         self.mk_mp3 = MakeMp3(
             mp3_out_dir,
             self.output_id_filter_str,
@@ -120,9 +133,20 @@ class MakeTssTextChDirAtFile(HoureiXml):
         })
         return user_data
 
-    def user_post_article_handler(self, el, user_data):
-        texts = '\n'.join(self.user_data["tts_texts"])
+    def convert_article_sentences(self, id_str, texts):
+        if 'name_replace_obj' in self.user_data and id_str in self.user_data['name_replace_obj'] and 0 < len(self.user_data['name_replace_obj'][id_str]):
+            new_texts = []
+            for text in texts:
+                for item in self.user_data['name_replace_obj'][id_str]:
+#                    text = text.replace(item['key'], item['key']+"\n"+item['str_to_replace']+"\n")
+                    text = text.replace(item['key'], "\n"+item['str_to_replace']+"\n")
+                for item in text.split("\n"):
+                    new_texts.append(item)
+            return new_texts
+        else:
+            return texts
 
+    def user_post_article_handler(self, el, user_data):
         cap_ele = el.find("ArticleCaption")
         caption_str = (cap_ele.text).strip() if cap_ele is not None else ""
         title_str = (el.find("ArticleTitle").text).strip()
@@ -132,7 +156,8 @@ class MakeTssTextChDirAtFile(HoureiXml):
             "file":str(file_name),
             "title":str(sound_title),
         })
-        self.mk_mp3.mp3_tts(file_name, texts.split('\n'), sound_title, self.user_data["LawTitle"])
+        tts_text = '\n'.join(self.convert_article_sentences(user_data["_id_str"], self.user_data["tts_texts"]))
+        self.mk_mp3.mp3_tts(file_name, tts_text.split('\n'), sound_title, self.user_data["LawTitle"], self.speed_percent * 2)
 
     def user_paragraph_handler(self, el, user_data):
         if "parent_article_str" not in user_data:
