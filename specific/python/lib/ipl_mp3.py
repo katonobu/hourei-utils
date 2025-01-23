@@ -69,6 +69,14 @@ class ChikujoTtsText(MakeTssTextChDirAtFile):
             mp3_out_dir = os.path.join(hourei_base_dir, self.hourei_id, "chikujo_mp3_txt")
         else:
             mp3_out_dir = os.path.join(hourei_base_dir, self.hourei_id, "chikujo_mp3")
+
+        name_replace_obj = {}
+        name_replace_file_path = os.path.join(hourei_base_dir, self.hourei_id, "at_name_replace.json")
+        if os.path.isfile(name_replace_file_path):
+            with open(name_replace_file_path, encoding='utf-8') as f:
+                name_replace_obj = json.load(f)
+        self.user_data['name_replace_obj'] = name_replace_obj
+
         self.mk_mp3 = MakeMp3(
             mp3_out_dir,
             self.output_id_filter_str,
@@ -93,7 +101,7 @@ class ChikujoTtsText(MakeTssTextChDirAtFile):
             "file":str(file_name),
             "title":str(sound_title),
         })
-        tts_texts = self.user_data["tts_texts"]
+        tts_texts = self.convert_article_sentences(user_data["_id_str"], self.user_data["tts_texts"])
         purpose_texts = self.get_purpose(user_data["_id_str"])
         if 0 < len(purpose_texts):
             tts_texts = tts_texts+['','趣旨','']+purpose_texts+[' ',' ']
@@ -112,14 +120,20 @@ if __name__ == "__main__":
     with open(structured_json_file_path, encoding='utf-8') as f:
         structured_obj = json.load(f)
 
+    name_replace_json_file_path = os.path.join(os.path.dirname(__file__), "..","extracted_text_from_pdf","tokkyo_at_name_replace.json")
+    name_replace_obj = {}
+    with open(name_replace_json_file_path, encoding='utf-8') as f:
+        name_replace_obj = json.load(f)
+
     hourei_xml = ChikujoTtsText(
         hourei_base_dir,
         {
             'replace_strs':replace_strs,
             'replace_res':replace_res,
-            'structured_chikujo_obj':structured_obj
+            'structured_chikujo_obj':structured_obj,
+            'name_replace_obj':name_replace_obj
         }, 
-        "1",#"1",
+        "2",#"1",
         "Mp-Ch_",
         dry_run
     )
