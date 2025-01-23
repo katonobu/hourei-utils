@@ -146,6 +146,7 @@ class HoureiXml():
             # <ItemTitle> | <ItemSentence> | <Subitem1> | 
             # <TableStruct> | <FigStruct> | <StyleStruct> | <List>
             self._handle_item_sentence(ch_el, local_data)
+            self._handle_subitem1(ch_el, local_data)
 
     def _handle_item_sentence(self, el, user_data):
         for ch_el in el.findall("ItemSentence"):
@@ -153,6 +154,33 @@ class HoureiXml():
             local_data = self.user_item_sentence_handler(ch_el, local_data)
             # <Sentence> | <Column> | <Table>
             self._handle_sentence(ch_el, local_data)
+            self._handle_column(ch_el, local_data)
+
+    def _handle_subitem1(self, el, user_data):
+        for ch_el in el.findall("Subitem1"):
+            local_data = self.subitem1_handler(ch_el, user_data)
+            local_data = self.user_subitem1_handler(ch_el, local_data)
+            self._handle_subitem1_sentence(ch_el, local_data)
+
+    def _handle_subitem1_sentence(self, el, user_data):
+        for ch_el in el.findall("Subitem1Sentence"):
+            local_data = self.subitem1_sentencehandler(ch_el, user_data)
+            local_data = self.user_subitem1_sentence_handler(ch_el, local_data)
+            # <Sentence> | <Column> | <Table>
+            self._handle_sentence(ch_el, local_data)
+
+    def _handle_column(self, el, user_data):
+        for ch_el in el.findall("Column"):
+            local_data = self.column_handler(ch_el, user_data)
+            local_data = self.user_column_handler(ch_el, local_data)
+            self._handle_column_sentence(ch_el, local_data)
+
+    def _handle_column_sentence(self, el, user_data):
+        for ch_el in el.findall("Sentence"):
+            local_data = self.column_sentence_handler(ch_el, user_data)
+            local_data = self.user_column_sentence_handler(ch_el, local_data)
+            self._handle_inline(ch_el, local_data)
+
 
     def _handle_sentence(self, el, user_data):
         for ch_el in el.findall("Sentence"):
@@ -234,6 +262,8 @@ class HoureiXml():
 
     def paragraph_sentence_handler(self, el, user_data):
         new_user_data = copy.deepcopy(user_data)
+        if '_id_str' in user_data:
+            new_user_data.update({'_id_str':f'{new_user_data["_id_str"]}-Ps_{el.get("Num")}'})
         return new_user_data
 
     def item_handler(self, el, user_data):
@@ -245,7 +275,28 @@ class HoureiXml():
     def item_sentencehandler(self, el, user_data):
         new_user_data = copy.deepcopy(user_data)
         return new_user_data
-    
+
+    def subitem1_handler(self, el, user_data):
+        new_user_data = copy.deepcopy(user_data)
+        if '_id_str' in user_data:
+            new_user_data.update({'_id_str':f'{new_user_data["_id_str"]}-Si1_{el.get("Num")}'})
+        return new_user_data
+
+    def subitem1_sentencehandler(self, el, user_data):
+        new_user_data = copy.deepcopy(user_data)
+        return new_user_data
+
+    def column_handler(self, el, user_data):
+        new_user_data = copy.deepcopy(user_data)
+        if '_id_str' in user_data:
+            new_user_data.update({'_id_str':f'{new_user_data["_id_str"]}-Co_{el.get("Num")}'})
+            pass
+        return new_user_data
+
+    def column_sentence_handler(self, el, user_data):
+        new_user_data = copy.deepcopy(user_data)
+        return new_user_data
+
     def sentence_handler(self, el, user_data):
         new_user_data = copy.deepcopy(user_data)
         if '_id_str' in user_data:
@@ -312,6 +363,18 @@ class HoureiXml():
         return user_data
 
     def user_item_sentence_handler(self, el, user_data):
+        return user_data
+
+    def user_subitem1_handler(self, el, user_data):
+        return user_data
+
+    def user_subitem1_sentence_handler(self, el, user_data):
+        return user_data
+
+    def user_column_handler(self, el, user_data):
+        return user_data
+
+    def user_column_sentence_handler(self, ch, user_data):
         return user_data
 
     def user_sentence_handler(self, el, user_data):
