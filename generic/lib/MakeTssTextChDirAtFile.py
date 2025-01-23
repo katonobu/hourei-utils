@@ -45,9 +45,14 @@ class MakeTssTextChDirAtFile(HoureiXml):
     def get_inline_text(self, el):
         text = el.text
         for ruby in el.findall("Ruby"):
-            # ルビを読ませる
-            text += ruby.find("Rt").text
-            text += ruby.tail
+            # ルビを読ませるが、ルビを傍点として使ってる場合は元を読ませる。(測量法第三十一条)
+            if ruby.find("Rt").text == "ヽ":
+                text += ruby.text
+            else:
+                text += ruby.find("Rt").text
+            # ルビが2文字連続する場合、1文字目のruby.tailはNone(測量法第三十一条)
+            if ruby.tail is not None:
+                text += ruby.tail
         text += el.tail
         text = self.delete_brackets(text)
         if 'replace_res' in self.user_data:
@@ -179,9 +184,36 @@ class MakeTssTextChDirAtFile(HoureiXml):
             })
         return user_data
 
+    def user_subitem1_handler(self, el, user_data):
+        if "parent_article_str" in user_data:
+            title_el = el.find("Subitem1Title")
+            if title_el is not None:
+                user_data.update({
+                    "parent_article_str":f'{user_data["parent_article_str"]}{title_el.text}'
+                })
+        return user_data
+
     def user_sentence_handler(self, el, user_data):
         if "parent_article_str" in user_data:
             if el.get("Num") == "1" or el.get("Num") == None: # "Num"がないときもparent_article_strは表示させる
+                tts_text = f'{user_data["parent_article_str"]}\n{self.get_inline_text(el)}'
+            else:
+                tts_text = f'{self.get_inline_text(el)}'
+            if 'tts_texts' in self.user_data:
+                self.user_data["tts_texts"].append(tts_text)
+        return user_data
+
+    def user_column_handler(self, el, user_data):
+        if "parent_article_str" in user_data:
+            user_data.update({
+                "column_num":f'{el.get("Num")}'
+            })
+        return user_data
+
+    def user_column_sentence_handler(self, el, user_data):
+        if "parent_article_str" in user_data:
+            if 'column_num' in user_data and user_data['column_num'] == '1':
+                # 最初のcolumnはparente_articleを付ける
                 tts_text = f'{user_data["parent_article_str"]}\n{self.get_inline_text(el)}'
             else:
                 tts_text = f'{self.get_inline_text(el)}'
