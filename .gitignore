@@ -1,2 +1,4 @@
-generic/hourei_data/*
+generic/hourei_data
+specific/python/hourei_data
 */**/__pycache__
+*.md
