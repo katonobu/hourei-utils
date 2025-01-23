@@ -7,7 +7,8 @@ if __name__ == "__main__":
         "tokkyo_chikujo_text.json",
         "jitsu_chikujo_text.json",
         "isho_chikujo_text.json",
-        "shouhyou_chikujo_text.json"
+        "shouhyou_chikujo_text.json",
+        "shinsa_kizyun_text.json"
     ]
 
     base_path = os.path.abspath(os.path.join(os.path.dirname(__file__),"..","extracted_text_from_pdf"))
